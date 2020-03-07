@@ -4,7 +4,7 @@ import { Config } from 'protractor';
 
 @Component({
     selector: 'app-config',
-    templateUrl: ',/config.component.html',
+    templateUrl: './config.component.html',
 })
 
 export class ConfigComponent implements OnInit {
