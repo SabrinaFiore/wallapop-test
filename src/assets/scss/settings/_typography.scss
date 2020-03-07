@@ -1,0 +1,44 @@
+$base-font-size: 16px;
+$base-line-height: 24px;
+
+$t-default: $t-monserrat;
+
+h1, 
+.h1 {
+    color: $c-white;
+    font-family: $t-monserrat;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 2.25rem;
+}
+
+h2,
+.h2 {
+    color: $c-white;
+    font-family: $t-merriweather;
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 2rem;
+}
+
+h3,
+.h3 {
+    color: $c-white;
+    font-family: $t-merriweather;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.50rem;
+}
+
+ul, 
+li {
+    list-style: none;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+}

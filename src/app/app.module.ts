@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { AvatarModule } from './lib/modules/avatar/avatar.module';
 import { DescriptionModule } from './lib/modules/description/description.module';
 import { TitleModule } from './lib/modules/title/title.module';
+import { PriceModule } from './lib/modules/price/price.module';
+import { EmailModule } from './lib/modules/email/email.module';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { TitleModule } from './lib/modules/title/title.module';
     AppRoutingModule,
     AvatarModule,
     DescriptionModule,
+    EmailModule,
+    PriceModule,
     TitleModule,
   ],
   providers: [],
