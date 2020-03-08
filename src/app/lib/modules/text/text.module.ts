@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TitleComponent } from './title.component';
+import { TextComponent } from './text.component';
 
 @NgModule({
-    declarations: [TitleComponent],
+    declarations: [TextComponent],
     imports: [
         CommonModule,
     ],
-    exports: [TitleComponent],
+    exports: [TextComponent],
 })
-export class TitleModule { }
+export class TextModule { }

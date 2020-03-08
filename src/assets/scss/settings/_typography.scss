@@ -1,7 +1,14 @@
-$base-font-size: 16px;
-$base-line-height: 24px;
+$baseline: 1rem;
+$baseline-line-height: 24px;
 
 $t-default: $t-monserrat;
+
+$baseline--step-up-2: 0.75rem;     // 12 px
+$baseline--step-up-1: 0.875rem;    // 14 px
+$baseline: $baseline;              // 16 px
+$baseline--step-down-1: 1.25rem;   // 20 px
+$baseline--step-down-2: 1.5rem;    // 24 px
+$baseline--step-down-3: 1.625rem;  // 26 px
 
 h1, 
 .h1 {

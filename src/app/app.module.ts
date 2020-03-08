@@ -4,10 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AvatarModule } from './lib/modules/avatar/avatar.module';
-import { DescriptionModule } from './lib/modules/description/description.module';
-import { TitleModule } from './lib/modules/title/title.module';
-import { PriceModule } from './lib/modules/price/price.module';
-import { EmailModule } from './lib/modules/email/email.module';
+import { TextModule } from './lib/modules/text/text.module';
+import { RowContentModule } from './lib/modules/row-content/row-content.module';
 
 @NgModule({
   declarations: [
@@ -17,10 +15,8 @@ import { EmailModule } from './lib/modules/email/email.module';
     BrowserModule,
     AppRoutingModule,
     AvatarModule,
-    DescriptionModule,
-    EmailModule,
-    PriceModule,
-    TitleModule,
+    TextModule,
+    RowContentModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

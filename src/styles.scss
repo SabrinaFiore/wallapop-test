@@ -1,7 +1,12 @@
-// Components
+// Settings
+@import './assets/scss/settings/colors';
+@import './assets/scss/settings/fonts';
+@import './assets/scss/settings/media-queries';
+@import './assets/scss/settings/spacing';
+@import './assets/scss/settings/typography';
+@import './assets/scss/settings/variables';
 
-@import './src/assets/scss/components/avatar';
-@import './src/assets/scss/components/description';
-@import './src/assets/scss/components/email';
-@import './src/assets/scss/components/price';
-@import './src/assets/scss/components/title';
+// Components
+@import './assets/scss/components/avatar/avatar';
+@import './assets/scss/components/text/text';
+@import './assets/scss/components/row-content/row-content';

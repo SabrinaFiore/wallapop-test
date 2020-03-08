@@ -1,0 +1,35 @@
+@import './variables';
+
+.text-title {
+    color: $text-title--color;
+    font-family: $text-title--font-family;
+    font-size: $text-title--font-size;
+    font-weight: 500;
+}
+
+.text-paragraph {
+    color: $text-paragraph--color;
+    font-family: $text-paragraph--font-family;
+    font-size: $text-paragraph--font-size;
+}
+
+.text-amount {
+    color: $text-amount--color;
+    font-family: $text-amount--font-family;
+    font-size: $text-amount--font-size;
+}
+
+.text-contact {
+    color: $text-contact--color;
+    font-family: $text-contact--font-family;
+    font-size: $text-contact--font-size;
+}
+
+@media (max-width: 768px) { 
+    .text-title,
+    .text-paragraph,
+    .text-amount,
+    .text-contact {
+        padding-bottom: $text-items--padding-bottom $global-spacing--1;
+    }
+}

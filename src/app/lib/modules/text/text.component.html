@@ -1,0 +1,19 @@
+<ng-container *ngIf="type === 'paragraph'">
+    <div class="text-paragraph"><ng-container *ngTemplateOutlet="tempOutlet"></ng-container></div>
+</ng-container>
+
+<ng-container *ngIf="type === 'title'">
+    <div class="text-title"><ng-container *ngTemplateOutlet="tempOutlet"></ng-container></div>
+</ng-container>
+
+<ng-container *ngIf="type === 'amount'">
+    <div class="text-amount"><ng-container *ngTemplateOutlet="tempOutlet"></ng-container></div>
+</ng-container>
+
+<ng-container *ngIf="type === 'contact'">
+    <div class="text-amount"><ng-container *ngTemplateOutlet="tempOutlet"></ng-container></div>
+</ng-container>
+
+<ng-template #tempOutlet>
+    <ng-content></ng-content>
+</ng-template>
