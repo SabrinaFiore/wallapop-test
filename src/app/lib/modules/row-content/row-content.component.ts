@@ -11,4 +11,13 @@ export class RowContentComponent implements OnInit {
   ngOnInit() {
   }
 
+  public icon = 'star-empty';
+
+  public toggleIcon() {
+    if (this.icon === 'star-empty') {
+      this.icon == 'star-empty';
+    } else {
+      this.icon = "star-full"
+    }
+  }
 }

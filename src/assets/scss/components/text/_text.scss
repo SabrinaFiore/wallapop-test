@@ -1,5 +1,10 @@
 @import './variables';
 
+.text {
+    display: flex;
+    align-items: center;
+}
+
 .text-title {
     color: $text-title--color;
     font-family: $text-title--font-family;

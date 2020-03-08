@@ -9,11 +9,13 @@ export type appText = 'title' | 'paragraph' | 'amount' | 'contact' ;
 
 export class TextComponent implements OnInit {
 
-  @Input() type;
-
   constructor() { }
 
   ngOnInit() { }
+
+  @Input() type;
+
+  @Input() haveIcon: boolean = false;
 
   @HostBinding('class.text-title') get isTextTitle() {
     return this.type === 'title';
@@ -30,5 +32,4 @@ export class TextComponent implements OnInit {
   @HostBinding('class.text-contact') get isTextContact() {
     return this.type === 'contact';
   }
-
 }
