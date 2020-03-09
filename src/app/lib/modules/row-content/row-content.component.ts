@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
 import { DataConfig } from '../icon/icon.component';
-import { Items } from 'src/app/config/config.service';
+import { Items, ConfigService } from 'src/app/config/config.service';
 import { MatDialogConfig, MatDialog } from '@angular/material/dialog';
 import { ModalComponent } from '../modal/modal.component';
 
@@ -14,54 +14,40 @@ export class RowContentComponent implements OnInit {
 
   @Input() items: Items = [];
 
-  dataIconSvg: DataConfig;
+  email: boolean = false;
+  description: boolean = false;
+  price: boolean = false;
+  title: boolean = false;
   dataIconSvgOrder: DataConfig;
-  
   mySvgUrl: string = '../../../../assets/icons/';
   public iconSvg: string;
   public iconSvgOrder: string;
   
-  constructor(public MatDialog: MatDialog) { }
+  constructor(public MatDialog: MatDialog, private ConfigService : ConfigService) { }
 
   ngOnInit() {
     this.iconSvg = this.mySvgUrl + 'star-empty';
-    this.dataIconSvg = {
-      src: this.iconSvg + '.svg',
-      width: '20px',
-    }
+
     this.dataIconSvgOrder = {
       src: this.mySvgUrl + 'keyboard_arrow_down' + '.svg',
       width: '20px',
     }
   }
 
-  public toggleIcon(event: any) {
-    console.log('entra');
-    console.log(event);
-
-    if (event.favorite === true) {
-      event.favorite = false;
-      console.log('true')
-    } else {
-      event.favorite = true;
-      console.log('false')
-    }
-
-    this.iconSvg = this.iconSvg === this.mySvgUrl + 'star-empty' ? this.mySvgUrl + 'star-full' : this.mySvgUrl + 'star-empty'; 
-    
-    this.dataIconSvg = {
-      src: this.iconSvg + '.svg',
-      width: '20px',
-    }
+  public toggleIcon(items, item) {
+    item.favorite = !item.favorite;
+    this.ConfigService.setItems(items);
   }
 
-  public toggleIconUp() {
-    console.log('entraArrow');
-    this.iconSvgOrder = this.iconSvgOrder === this.mySvgUrl + 'keyboard_arrow_down' ? this.mySvgUrl + 'keyboard_arrow_up' : this.mySvgUrl + 'keyboard_arrow_down'; 
-    
-    this.dataIconSvgOrder = {
-      src: this.iconSvgOrder + '.svg',
-      width: '20px',
+  public toggleIconUp(column) {
+    switch(column) {
+      case 'title':
+        this.title = !this.title;
+        if(this.title) {
+          this.items.sort((a,b) => (a.title > b.title) ? 1 : ((b.title > a.title) ? -1 : 0)); 
+        } else {
+          this.items.sort((a,b) => (a.title < b.title) ? 1 : ((b.title < a.title) ? -1 : 0));
+        }
     }
   }
 
@@ -70,7 +56,7 @@ export class RowContentComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.id = "modal-component";
     dialogConfig.height = "350px";
-    dialogConfig.width = "600px";
+    dialogConfig.width = "800px";
     const modalDialog = this.MatDialog.open(ModalComponent, dialogConfig);
   }
 }

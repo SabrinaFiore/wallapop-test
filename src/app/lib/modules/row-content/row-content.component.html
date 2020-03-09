@@ -12,8 +12,11 @@
         <div class="row-content--column">
             <app-text type="header">Title 
                 <app-icon 
-                    [dataIcon]="dataIconSvgOrder"
-                    (click)="toggleIconUp()"
+                    [dataIcon]="{
+                        'src': title ? mySvgUrl+'keyboard_arrow_down.svg' : mySvgUrl+'keyboard_arrow_up.svg',
+                        'width': '20px'
+                    }"
+                    (click)="toggleIconUp('title')"
                 ></app-icon>           
             </app-text>
         </div>
@@ -21,7 +24,7 @@
             <app-text type="header">Description
                 <app-icon 
                     [dataIcon]="dataIconSvgOrder"
-                    (click)="toggleIconUp()"
+                    (click)="toggleIconUp('description')"
                 ></app-icon>     
             </app-text>
         </div>
@@ -29,7 +32,7 @@
             <app-text type="header">Price
                 <app-icon 
                     [dataIcon]="dataIconSvgOrder"
-                    (click)="toggleIconUp()"
+                    (click)="toggleIconUp('price')"
                 ></app-icon>
             </app-text>
         </div>
@@ -37,7 +40,7 @@
             <app-text type="header">Email
                 <app-icon 
                     [dataIcon]="dataIconSvgOrder"
-                    (click)="toggleIconUp()"
+                    (click)="toggleIconUp('email')"
                 ></app-icon>
             </app-text>
         </div>
@@ -51,7 +54,7 @@
     <div class="row-content">
         <div class="row-content--grid">
             <div class="row-content--column">
-                <app-avatar>{{ item.image }}</app-avatar>
+                <app-avatar [myImgUrl]="item.image"></app-avatar>
             </div>
             <div class="row-content--column">
                 <app-text type="title"> {{ item.title }} </app-text>
@@ -68,10 +71,10 @@
             <div class="row-content--column row-content--column--justify-center">
                 <app-icon 
                     [dataIcon]="{
-                        src: item.favorite ? mySvgUrl + 'star-full.svg' : mySvgUrl + 'star-empty.svg',
-                        width: '20px',
+                        'src': item.favorite ? mySvgUrl+'star-full.svg' : mySvgUrl+'star-empty.svg',
+                        'width': '20px'
                     }"
-                    (click)="toggleIcon(item)">
+                    (click)="toggleIcon(items, item)">
                 </app-icon>
             </div>
         </div>

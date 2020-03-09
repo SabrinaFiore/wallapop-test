@@ -21,14 +21,23 @@ mat-dialog-container#modal-component {
     background: none;
 }
 
-.modal-content-wrapper {
+.modal-content--wrapper {
     width: $modal-content-wrapper--width;
     height: $modal-content-wrapper--height;
     display: grid;
     grid-template-rows: $modal-content-wrapper--width;
 }
 
-.modal-footer {
+.modal--footer {
     justify-self: right;
     align-self: center;
+}
+
+.modal-content--column {
+    padding-bottom: $modal-content--column--padding-bottom;
+
+    .text-title {
+        color: $modal-content--column--color;
+        font-size: $modal-content--column--font-size;
+    }
 }
