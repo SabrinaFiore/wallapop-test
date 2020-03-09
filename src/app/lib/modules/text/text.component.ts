@@ -9,6 +9,8 @@ export type appText = 'title' | 'paragraph' | 'amount' | 'contact' ;
 
 export class TextComponent implements OnInit {
 
+  mySvgUrl: string = '../../../../assets/icons/star-empty.svg';
+
   constructor() { }
 
   ngOnInit() { }

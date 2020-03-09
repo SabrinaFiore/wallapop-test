@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { configservice } from './config.service';
+import { ConfigService } from './config.service';
 import { Config } from 'protractor';
 
 @Component({
@@ -12,24 +12,29 @@ export class ConfigComponent implements OnInit {
     config: Config;
     headers: any;
 
+    constructor(private ConfigService : ConfigService) { }
+
     ngOnInit() {
         this.showConfig();
     }
 
-    constructor(private configService : configservice) { }
-
     showConfig() {
-        this.configService.getConfig()
+        this.ConfigService.getConfig()
         // clone the data object
-            .subscribe((data: Config) => this.config = {
-                // to receive data as an Obj
-                wallapopUrl: (data as any).wallapoUrl,
-                textfile:  (data as any).textfile,
-        });
+            .subscribe((data: Config) => {
+                this.config = {
+                    // to receive data as an Obj
+                    wallapopUrl: (data as any).wallapoUrl,
+                    textfile:  (data as any).textfile
+                }
+
+                console.log(this.config);
+            }
+        );
     }
 
     showConfigResponse() {
-        this.configService.getConfigResponse()
+        this.ConfigService.getConfig()
             // resp is of type `HttpResponse<Config>`
             .subscribe(resp => {
             // display its headers

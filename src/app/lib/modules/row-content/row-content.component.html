@@ -4,8 +4,11 @@
             <app-text type="paragraph">image</app-text>
         </div>
         <div class="row-content--column">
-            <app-text type="paragraph">title 
-                <svg-icon src="../assets/icons/keyboard_arrow_down.svg" [svgStyle]="{ 'width.px':60 }"></svg-icon>
+            <app-text type="paragraph" >title 
+                <app-icon 
+                    [dataIcon]="dataIconSvgTitle"
+                    (click)="toggleIcon()"
+                ></app-icon>           
             </app-text>
         </div>
         <div class="row-content--column">
@@ -13,12 +16,18 @@
         </div>
         <div class="row-content--column">
             <app-text type="paragraph">Amount
-                <svg-icon src="../assets/icons/keyboard_arrow_down.svg" [svgStyle]="{ 'width.px':60 }"></svg-icon>
+                <app-icon 
+                    [dataIcon]="dataIconSvgAmount"
+                    (click)="toggleIcon()"
+                ></app-icon>
             </app-text>
         </div>
         <div class="row-content--column">
             <app-text type="paragraph">Price
-                <svg-icon src="../assets/icons/keyboard_arrow_down.svg" [svgStyle]="{ 'width.px':60 }"></svg-icon>
+                <app-icon 
+                    [dataIcon]="dataIconSvgPrice"
+                    (click)="toggleIcon()"
+                ></app-icon>
             </app-text>
         </div>
         <div class="row-content--column">
@@ -27,29 +36,30 @@
     </div>
 </div>
 
-<div class="row-content">
-    <div class="row-content--grid">
-        <div class="row-content--column">
-            <app-avatar></app-avatar>
-        </div>
-        <div class="row-content--column">
-            <app-text type="title">title</app-text>
-        </div>
-        <div class="row-content--column">
-            <app-text type="paragraph">paragraph</app-text>
-        </div>
-        <div class="row-content--column">
-            <app-text type="amount">amount</app-text>
-        </div>
-        <div class="row-content--column">
-            <app-text type="contact">amount</app-text>
-        </div>
-        <div class="row-content--column">
-            <svg-icon
-                class="svg-favourite--empty" 
-                [svgStyle]="{ 'width.px':20 }"
-                (click)="toggleIcon()"> {{ icon }}
-            </svg-icon>
+<ng-template ngFor let-item [ngForOf]="items" let-i="index" [ngForTrackBy]="trackByFn">
+    <div class="row-content">
+        <div class="row-content--grid">
+            <div class="row-content--column">
+                <app-avatar>{{ item.image }}</app-avatar>
+            </div>
+            <div class="row-content--column">
+                <app-text type="title"> {{ item.title }} </app-text>
+            </div>
+            <div class="row-content--column">
+                <app-text type="paragraph">{{ item.description }}</app-text>
+            </div>
+            <div class="row-content--column">
+                <app-text type="amount">{{ item.price }}</app-text>
+            </div>
+            <div class="row-content--column">
+                <app-text type="contact">amount</app-text>
+            </div>
+            <div class="row-content--column">
+                <app-icon 
+                    [dataIcon]="dataIconSvg"
+                    (click)="toggleIcon()"
+                ></app-icon>
+            </div>
         </div>
     </div>
-</div>
+</ng-template>

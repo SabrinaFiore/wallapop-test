@@ -7,6 +7,7 @@ import { AvatarModule } from './lib/modules/avatar/avatar.module';
 import { TextModule } from './lib/modules/text/text.module';
 import { RowContentModule } from './lib/modules/row-content/row-content.module';
 import { IconModule } from './lib/modules/icon/icon.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,8 +20,10 @@ import { IconModule } from './lib/modules/icon/icon.module';
     AvatarModule,
     TextModule,
     RowContentModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
