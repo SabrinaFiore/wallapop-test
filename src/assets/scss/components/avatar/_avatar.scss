@@ -2,8 +2,6 @@
 
 .avatar {
     display: block;
-    height: $avatar--height;
-    width: $avatar--width;
 }
 
 .avatar img {
@@ -19,7 +17,8 @@
 }
 
 @media (max-width: 768px) { 
-    .avatar {
-        padding-bottom: $avatar--padding-bottom;
+    .avatar img {
+        max-height: $avatar-img--max-height--small;
+        max-width: $avatar-img--max-width--small;
     }
 }

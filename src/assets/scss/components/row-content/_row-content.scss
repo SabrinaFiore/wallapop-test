@@ -24,14 +24,30 @@
 }
 
 @media (max-width: 768px) {
+    .row-content {
+        padding-bottom: $row-content--padding-bottom;
+    }
+
+    .row-content .row-content--header {
+        padding-bottom: $row-content--header--padding-bottom;
+    }
+
     .row-content--grid {
         display: flex;
         flex-direction: column;
     }
-}
 
-@media (max-width: 768px) {
     .row-content--column {
         margin: $row-content--column--media-margin;
+    }
+
+    .row-content--header {
+        li:nth-child(2),
+        li:nth-child(3),
+        li:nth-child(4),
+        li:nth-child(5),
+        li:nth-child(6) {
+            display: none;
+        }
     }
 }
