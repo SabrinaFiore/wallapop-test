@@ -1,3 +1,9 @@
+<div class="row-content--column--justify-end ">
+    <button mat-raised-button class="open-modal-button" (click)="openModal()">
+        <app-text type="header">Favorite</app-text>
+    </button>
+</div>
+
 <div class="row-content">
     <div class="row-content--grid row-content--header">
         <div class="row-content--column">
@@ -6,32 +12,32 @@
         <div class="row-content--column">
             <app-text type="header">Title 
                 <app-icon 
-                    [dataIcon]="dataIconSvgTitle"
-                    (click)="toggleIcon()"
+                    [dataIcon]="dataIconSvgOrder"
+                    (click)="toggleIconUp()"
                 ></app-icon>           
             </app-text>
         </div>
         <div class="row-content--column">
             <app-text type="header">Description
                 <app-icon 
-                    [dataIcon]="dataIconSvgDescription"
-                    (click)="toggleIcon()"
+                    [dataIcon]="dataIconSvgOrder"
+                    (click)="toggleIconUp()"
                 ></app-icon>     
             </app-text>
         </div>
         <div class="row-content--column row-content--column--justify-center">
             <app-text type="header">Price
                 <app-icon 
-                    [dataIcon]="dataIconSvgPrice"
-                    (click)="toggleIcon()"
+                    [dataIcon]="dataIconSvgOrder"
+                    (click)="toggleIconUp()"
                 ></app-icon>
             </app-text>
         </div>
         <div class="row-content--column row-content--column--justify-center">
             <app-text type="header">Email
                 <app-icon 
-                    [dataIcon]="dataIconSvgEmail"
-                    (click)="toggleIcon()"
+                    [dataIcon]="dataIconSvgOrder"
+                    (click)="toggleIconUp()"
                 ></app-icon>
             </app-text>
         </div>
@@ -61,9 +67,12 @@
             </div>
             <div class="row-content--column row-content--column--justify-center">
                 <app-icon 
-                    [dataIcon]="dataIconSvg"
-                    (click)="toggleIcon()"
-                ></app-icon>
+                    [dataIcon]="{
+                        src: item.favorite ? mySvgUrl + 'star-full.svg' : mySvgUrl + 'star-empty.svg',
+                        width: '20px',
+                    }"
+                    (click)="toggleIcon(item)">
+                </app-icon>
             </div>
         </div>
     </div>

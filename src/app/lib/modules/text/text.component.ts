@@ -1,6 +1,6 @@
 import { Component, OnInit, HostBinding, Input } from '@angular/core';
 
-export type appText = 'title' | 'paragraph' | 'price' | 'email' ;
+export type appText = 'header' | 'title' | 'paragraph' | 'price' | 'email' ;
 
 @Component({
   selector: 'app-text',

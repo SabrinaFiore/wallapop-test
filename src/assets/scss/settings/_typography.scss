@@ -12,34 +12,6 @@ $baseline--step-down-1: 1.25rem;   // 20 px
 $baseline--step-down-2: 1.5rem;    // 24 px
 $baseline--step-down-3: 1.625rem;  // 26 px
 
-h1, 
-.h1 {
-    color: $c-white;
-    font-family: $t-monserrat;
-    font-size: 40px;
-    font-weight: 700;
-    line-height: 2.25rem;
-}
-
-h2,
-.h2 {
-    color: $c-white;
-    font-family: $t-merriweather;
-    font-size: 25px;
-    font-weight: 500;
-    line-height: 2rem;
-}
-
-h3,
-.h3 {
-    color: $c-white;
-    font-family: $t-merriweather;
-    font-size: 18px;
-    font-style: italic;
-    font-weight: 400;
-    line-height: 1.50rem;
-}
-
 ul, 
 li {
     list-style: none;

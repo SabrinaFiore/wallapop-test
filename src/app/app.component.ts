@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { ConfigService, Items } from './config/config.service';
+import { ConfigService } from './config/config.service';
 
 @Component({
   selector: 'app-root',
@@ -11,23 +11,7 @@ export class AppComponent {
   title = 'wallapop-test';
   // items: any[] = [];
 
-  constructor(private ConfigService : ConfigService) { }
-      
-  ngOnInit() {
-    // this.showConfig();
-  }
-
-  showConfig() {
-    this.ConfigService.getConfig()
-      // clone the data object
-        .subscribe((data) => {
-          this.ConfigService.setItems(data.body);
-          this.items = this.ConfigService.getItems();
-        }
-    );
-  }
-
-  items= [
+  items: Object[] = [
     {
       "title": "iPhone 6S Oro",
       "description": "Vendo un iPhone 6 S color Oro nuevo y sin estrenar. Me han dado uno en el trabajo y no necesito el que me compré. En tienda lo encuentras por 749 euros y yo lo vendo por 740. Las descripciones las puedes encontrar en la web de apple. Esta libre.",
@@ -169,6 +153,25 @@ export class AppComponent {
       "image": "https://webpublic.s3-eu-west-1.amazonaws.com/tech-test/img/headphones.jpg"
     }
   ]
+
+  constructor(private ConfigService : ConfigService) { }
+
+  ngOnInit() {
+    // this.showConfig();
+    this.items.forEach(element => {
+      element['favorite'] = false;
+    });
+  }
+
+  showConfig() {
+    this.ConfigService.getConfig()
+      // clone the data object
+        .subscribe((data) => {
+          this.ConfigService.setItems(data.body);
+          this.items = this.ConfigService.getItems();
+        }
+    );
+  }
 
   //  descending () {
   //   this.arrayHTML = this.arraylist.sort(this.compareDes);

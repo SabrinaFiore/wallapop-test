@@ -11,8 +11,8 @@ import { IconModule } from '../icon/icon.module';
     imports: [
         CommonModule,
         AvatarModule,
-        TextModule,
         IconModule,
+        TextModule,
     ],
     exports: [RowContentComponent],
 })

@@ -1,0 +1,15 @@
+// Modal
+
+$modal-component--bg: $c-black--step-up-1;
+$modal-component--border-radius: $global-spacing--3;
+$modal-component--border: 1px solid $c-black--step-up-1;
+
+$modal-content-wrapper--width: 100%;
+$modal-content-wrapper--height: 100%;
+$modal-content-wrapper--width: repeat(1fr, 3);
+
+$modal-action-button--bg: $c-dark-gray;
+$modal-cancel-button--bg: $c-light-gray--step-down-1;
+
+$modal-header--color: $c-light-gray--step-down-1;
+$modal-paragraph--color: $c-light-gray--step-down-1;

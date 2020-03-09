@@ -18,9 +18,20 @@
     justify-content: center;
 }
 
+.row-content--column--justify-end {
+    display: flex;
+    justify-content: flex-end;
+}
+
 @media (max-width: 768px) {
     .row-content--grid {
         display: flex;
         flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .row-content--column {
+        margin: $row-content--column--media-margin;
     }
 }

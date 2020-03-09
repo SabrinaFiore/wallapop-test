@@ -1,0 +1,14 @@
+<div class="modal modal-content-wrapper">
+    <header id="modal-header">
+        <app-text type="header">Saved</app-text>
+    </header>
+    <section id="modal-body">
+        <ng-template ngFor let-item [ngForOf]="items" let-i="index" [ngForTrackBy]="trackByFn">
+            <app-text type="paragraph">{{ item.title }}</app-text>
+        </ng-template>
+        <app-text type="paragraph">Insert Array Obj</app-text>
+    </section>
+    <footer class="modal-footer">
+        <button mat-raised-button class="modal-cancel-button" (click)="closeModal()">Go back</button>
+    </footer>
+</div>
