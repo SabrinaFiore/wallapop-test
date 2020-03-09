@@ -1,10 +1,10 @@
 <div class="row-content">
     <div class="row-content--grid row-content--header">
         <div class="row-content--column">
-            <app-text type="paragraph">image</app-text>
+            <app-text type="header">Product Image</app-text>
         </div>
         <div class="row-content--column">
-            <app-text type="paragraph" >title 
+            <app-text type="header">Title 
                 <app-icon 
                     [dataIcon]="dataIconSvgTitle"
                     (click)="toggleIcon()"
@@ -12,26 +12,31 @@
             </app-text>
         </div>
         <div class="row-content--column">
-            <app-text type="paragraph">description</app-text>
-        </div>
-        <div class="row-content--column">
-            <app-text type="paragraph">Amount
+            <app-text type="header">Description
                 <app-icon 
-                    [dataIcon]="dataIconSvgAmount"
+                    [dataIcon]="dataIconSvgDescription"
                     (click)="toggleIcon()"
-                ></app-icon>
+                ></app-icon>     
             </app-text>
         </div>
-        <div class="row-content--column">
-            <app-text type="paragraph">Price
+        <div class="row-content--column row-content--column--justify-center">
+            <app-text type="header">Price
                 <app-icon 
                     [dataIcon]="dataIconSvgPrice"
                     (click)="toggleIcon()"
                 ></app-icon>
             </app-text>
         </div>
-        <div class="row-content--column">
-            <app-text type="paragraph">Favourite</app-text>
+        <div class="row-content--column row-content--column--justify-center">
+            <app-text type="header">Email
+                <app-icon 
+                    [dataIcon]="dataIconSvgEmail"
+                    (click)="toggleIcon()"
+                ></app-icon>
+            </app-text>
+        </div>
+        <div class="row-content--column row-content--column--justify-center">
+            <app-text type="header">Favourite</app-text>
         </div>
     </div>
 </div>
@@ -48,13 +53,13 @@
             <div class="row-content--column">
                 <app-text type="paragraph">{{ item.description }}</app-text>
             </div>
-            <div class="row-content--column">
-                <app-text type="amount">{{ item.price }}</app-text>
+            <div class="row-content--column row-content--column--justify-center">
+                <app-text type="price">{{ item.price }}</app-text>
             </div>
-            <div class="row-content--column">
-                <app-text type="contact">amount</app-text>
+            <div class="row-content--column row-content--column--justify-center">
+                <app-text type="email">{{ item.email }}</app-text>
             </div>
-            <div class="row-content--column">
+            <div class="row-content--column row-content--column--justify-center">
                 <app-icon 
                     [dataIcon]="dataIconSvg"
                     (click)="toggleIcon()"

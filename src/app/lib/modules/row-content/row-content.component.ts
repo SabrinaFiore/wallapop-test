@@ -12,8 +12,9 @@ export class RowContentComponent implements OnInit {
   @Input() items: Items = [];
 
   dataIconSvg: DataConfig;
-  dataIconSvgAmount: DataConfig;
   dataIconSvgTitle: DataConfig;
+  dataIconSvgDescription: DataConfig;
+  dataIconSvgEmail: DataConfig;
   dataIconSvgPrice: DataConfig;
 
   mySvgUrl: string = '../../../../assets/icons/';
@@ -27,15 +28,19 @@ export class RowContentComponent implements OnInit {
       src: this.iconSvg + '.svg',
       width: '20px',
     }
-    this.dataIconSvgAmount = {
-      src: this.mySvgUrl + 'keyboard_arrow_down' + '.svg',
-      width: '20px',
-    }
     this.dataIconSvgTitle = {
       src: this.mySvgUrl + 'keyboard_arrow_down' + '.svg',
       width: '20px',
     }
+    this.dataIconSvgDescription = {
+      src: this.mySvgUrl + 'keyboard_arrow_down' + '.svg',
+      width: '20px',
+    }
     this.dataIconSvgPrice = {
+      src: this.mySvgUrl + 'keyboard_arrow_down' + '.svg',
+      width: '20px',
+    }
+    this.dataIconSvgEmail = {
       src: this.mySvgUrl + 'keyboard_arrow_down' + '.svg',
       width: '20px',
     }

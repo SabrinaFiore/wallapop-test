@@ -1,6 +1,6 @@
 import { Component, OnInit, HostBinding, Input } from '@angular/core';
 
-export type appText = 'title' | 'paragraph' | 'amount' | 'contact' ;
+export type appText = 'title' | 'paragraph' | 'price' | 'email' ;
 
 @Component({
   selector: 'app-text',
@@ -19,6 +19,10 @@ export class TextComponent implements OnInit {
 
   @Input() haveIcon: boolean = false;
 
+  @HostBinding('class.text-header') get isTextHeader() {
+    return this.type === 'header';
+  }
+
   @HostBinding('class.text-title') get isTextTitle() {
     return this.type === 'title';
   }
@@ -27,11 +31,11 @@ export class TextComponent implements OnInit {
     return this.type === 'paragraph';
   }
 
-  @HostBinding('class.text-amount') get isTextAmount() {
-    return this.type === 'amount';
+  @HostBinding('class.text-price') get isTextprice() {
+    return this.type === 'price';
   }
 
-  @HostBinding('class.text-contact') get isTextContact() {
-    return this.type === 'contact';
+  @HostBinding('class.text-email') get isTextemail() {
+    return this.type === 'email';
   }
 }

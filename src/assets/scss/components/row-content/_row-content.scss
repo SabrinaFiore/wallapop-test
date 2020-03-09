@@ -7,9 +7,15 @@
 
 .row-content--grid {
     display: grid;
-    grid-template-columns: repeat(6, 200px);
-    grid-gap: 10px;
+    grid-template-columns: $row-content--grid--column;
+    grid-gap: $row-content--grid--grap;
     align-items: center;
+    height: $row-content--grid--height;
+}
+
+.row-content--column--justify-center {
+    display: flex;
+    justify-content: center;
 }
 
 @media (max-width: 768px) {

@@ -5,6 +5,13 @@
     align-items: center;
 }
 
+.text-header {
+    color: $text-header--color;
+    font-family: $text-header--font-family;
+    font-size: $text-header--font-size;
+    font-weight: 500;
+}
+
 .text-title {
     color: $text-title--color;
     font-family: $text-title--font-family;
@@ -16,25 +23,27 @@
     color: $text-paragraph--color;
     font-family: $text-paragraph--font-family;
     font-size: $text-paragraph--font-size;
+    display: flex;
+    align-items: flex-start;
 }
 
-.text-amount {
-    color: $text-amount--color;
-    font-family: $text-amount--font-family;
-    font-size: $text-amount--font-size;
+.text-price {
+    color: $text-price--color;
+    font-family: $text-price--font-family;
+    font-size: $text-price--font-size;
 }
 
-.text-contact {
-    color: $text-contact--color;
-    font-family: $text-contact--font-family;
-    font-size: $text-contact--font-size;
+.text-email {
+    color: $text-email--color;
+    font-family: $text-email--font-family;
+    font-size: $text-email--font-size;
 }
 
 @media (max-width: 768px) { 
     .text-title,
     .text-paragraph,
-    .text-amount,
-    .text-contact {
+    .text-price,
+    .text-email {
         padding-bottom: $text-items--padding-bottom $global-spacing--1;
     }
 }

@@ -1,3 +1,7 @@
+<ng-container *ngIf="type === 'header'">
+    <div class="text text-header"><ng-container *ngTemplateOutlet="tempOutlet"></ng-container></div>
+</ng-container>
+
 <ng-container *ngIf="type === 'paragraph'">
     <div class="text text-paragraph"><ng-container *ngTemplateOutlet="tempOutlet"></ng-container></div>
 </ng-container>
@@ -6,12 +10,12 @@
     <div class="text text-title"><ng-container *ngTemplateOutlet="tempOutlet"></ng-container></div>
 </ng-container>
 
-<ng-container *ngIf="type === 'amount'">
-    <div class="text text-amount"><ng-container *ngTemplateOutlet="tempOutlet"></ng-container></div>
+<ng-container *ngIf="type === 'price'">
+    <div class="text text-price"><ng-container *ngTemplateOutlet="tempOutlet"></ng-container></div>
 </ng-container>
 
-<ng-container *ngIf="type === 'contact'">
-    <div class="text text-amount"><ng-container *ngTemplateOutlet="tempOutlet"></ng-container></div>
+<ng-container *ngIf="type === 'email'">
+    <div class="text text-email"><ng-container *ngTemplateOutlet="tempOutlet"></ng-container></div>
 </ng-container>
 
 <ng-template #tempOutlet>
